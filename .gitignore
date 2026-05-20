@@ -1,0 +1,17 @@
+# Java / Maven
+target/
+*.class
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Локальные настройки
+.env
+application-local.properties
+
+# Операционные системы
+.DS_Store
+Thumbs.db
