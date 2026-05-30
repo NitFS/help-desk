@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @Table(name = "tickets")
 public class Ticket {
 
-    // Геттеры и сеттеры
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -57,14 +56,25 @@ public class Ticket {
             status = TicketStatus.NEW;
         }
     }
-
+    public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
-    public void setDescription(String description) { this.description = description; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
+    public TicketStatus getStatus() { return status; }
     public void setStatus(TicketStatus status) { this.status = status; }
 
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
-    public void setCustomerName(String customerName) { this.customerName = customerName; }
+    public String getCustomerName() { return customerName; }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 }
+
