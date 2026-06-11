@@ -3,7 +3,7 @@ package com.example.helpdesk.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public class TicketCreateDto {
+public class TicketCreateDto{
 
     @NotBlank(message = "Введите имя")
     @Size(max = 100, message = "Имя не должно превышать 100 символов")
