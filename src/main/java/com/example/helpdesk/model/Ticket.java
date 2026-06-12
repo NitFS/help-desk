@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Table(name = "tickets")
 public class Ticket {
 
-    // Геттеры и сеттеры
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
