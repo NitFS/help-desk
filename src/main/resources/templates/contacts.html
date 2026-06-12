@@ -29,25 +29,24 @@
 
     <div class="card shadow-sm">
         <div class="card-body">
-            <table class="table table-striped align-middle mb-0">
-                <tbody>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td th:text="${supportEmail}">support@example.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">Телефон</th>
-                    <td th:text="${phone}">+7 (000) 000-00-00</td>
-                </tr>
-                <tr>
-                    <th scope="row">Время работы</th>
-                    <td th:text="${workTime}">Пн-Пт, 09:00-18:00</td>
-                </tr>
-                </tbody>
-            </table>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:each="channel : ${supportChannels}" th:text="${channel}">
+                    Канал связи
+                </li>
+            </ul>
         </div>
     </div>
-
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h2 class="h5 mb-3">Что указать в обращении:</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">1. ФИО и должность</li>
+                <li class="list-group-item">2. Краткое описание проблемы</li>
+                <li class="list-group-item">3. Скриншоты ошибки (если есть)</li>
+                <li class="list-group-item">4. Название неработающего сервиса или программы</li>
+            </ul>
+        </div>
+    </div>
     <div class="alert alert-info mt-4">
         В следующих модулях здесь появится форма создания обращения.
     </div>

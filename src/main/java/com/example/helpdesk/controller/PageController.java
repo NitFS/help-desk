@@ -12,7 +12,12 @@ public class PageController {
     public String home(Model model) {
         model.addAttribute("pageTitle", "Help Desk");
         model.addAttribute("welcomeMessage", "Добро пожаловать в Help Desk");
-        model.addAttribute("features", List.of("Регистрация обращений", "Приоритизация задач", "Контакты поддержки"));
+        model.addAttribute("features", List.of(
+                "Регистрация обращений",
+                "Приоритизация задач",
+                "Контакты поддержки",
+                "База знаний"
+        ));
         return "index";
     }
 
@@ -27,9 +32,20 @@ public class PageController {
     @GetMapping("/contacts")
     public String contacts(Model model) {
         model.addAttribute("pageTitle", "Контакты поддержки");
-        model.addAttribute("supportEmail", "support@helpdesk.local");
-        model.addAttribute("workTime", "Пн-Пт, 09:00-18:00");
-        model.addAttribute("phone", "+7 (000) 000-00-00");
+
+        model.addAttribute("supportChannels", List.of(
+                "Email: support@helpdesk.local",
+                "Телефон: +7 (000) 000-00-00",
+                "Telegram: @helpdesk_support",
+                "Время работы: Пн-Пт, 09:00-18:00"
+        ));
+
         return "contacts";
+    }
+
+    @GetMapping("/faq")
+    public String faq(Model model) {
+        model.addAttribute("pageTitle", "Частые вопросы");
+        return "faq";
     }
 }
